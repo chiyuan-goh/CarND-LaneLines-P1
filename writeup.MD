@@ -20,8 +20,6 @@ The goals / steps of this project are the following:
 
 ### Overview of Algorithm
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
 This project introduces us to a brief overview of using computer vision to detect lane lines on road. The current pipeline consists of the following steps:
 
 1. Convert camera image to grayscale
@@ -54,5 +52,5 @@ Environmental issues might also create false positives for the lanes. For instan
 
 ![alt text][challenge_img]
 
-In the above image taken from the challenge video, we can actually observe shadows "obscuring" the left yellow line. Also, we can see that the mask is not entirely effective - lines from the left roadside railings are detected instead. To avoid selecting false positives as lane lines, perhaps we can apply certain geometric contraints. For instance, we can apply perspective transformation to get a "bird eye" top down view. We can then select from line pairs which are parallel (with some tolerance_ to each other. 
+In the above image taken from the challenge video, we can actually observe shadows "obscuring" the left yellow line. Also, we can see that the mask is not entirely effective - lines from the left roadside railings are detected instead. To avoid selecting false positives as lane lines, perhaps we can apply certain geometric contraints. For instance, we can apply perspective transformation to get a "bird eye" top down view. We can then select from line pairs which are parallel (with some tolerances) to each other. 
 
