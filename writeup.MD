@@ -1,21 +1,18 @@
-#**Finding Lane Lines on the Road** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
+Lane lines are essential features for driverless cars and advanced driver assistance systems (ADAS) for 
+
 The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
+* Make a pipeline utilizing canny edge detection and hough transforms that finds lane lines on the road from camera images.
+* Reflect on the work in a written report
 
 
 [//]: # (Image References)
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
+[edges_img]: ./writeup_images/edges.png "Edges"
+[mask_img]: ./writeup_images/mask.png "Mask"
+[aftermask_img]: ./writeup_images/after_mask.png "After Mask"
 
 ---
 
@@ -28,6 +25,7 @@ This project introduces us to a brief overview of using computer vision to detec
 1. Convert camera image to grayscale
 2. Use gaussian filter to smooth the grayscale image [kernel_size = 9]
 3. Run the Canny edge detector on the smoothed iamge to extract the line edges [low threshold = 50, high threshold = 220]
+![alt text][edges_img]
 4. Constrain/mask the image to only the bottom of the image to avoid as many false positives as possible.
 5. Run Hough Transform [Opencv's HoughLinesP] to find lines [max_line_gap=4, min_line_len=6, threshold=15, theta= 1 degree, rho = 1] 
 6. To draw only the left and right lane lines, the draw_lines() function is modified such that
